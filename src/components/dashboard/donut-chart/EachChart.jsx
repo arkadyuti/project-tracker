@@ -1,4 +1,4 @@
-
+import React from 'react'
 import Pie from './pie.jsx'
 
 var EachChart = React.createClass({
@@ -15,20 +15,25 @@ var EachChart = React.createClass({
     		x = this.props.x,
     		y = this.props.y,
     		data = [],
-    		color=[];
+    		color=[],
+    		label=[];
 
     	for(var key in this.props.data){
     		data.push(this.props.data[key].value);
     	}
 
-    	if(this.props.data[0].label=="red"){
+    	
     	for(var key in this.props.data){
+    		if(this.props.data[0].label=="red"){
     		color.push(this.props.data[key].label);
+    		}
+    		label.push(this.props.data[key].label);
+
     	}
-    }
 
 		return (
-			<Pie x={x} y={y} radius={radius} data={data} color={color} />
+			<Pie x={x} y={y} radius={radius} data={data} color={color} label={label}/>
+
 			)
 		}
 })

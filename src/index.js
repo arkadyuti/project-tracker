@@ -1,4 +1,11 @@
-import './styles/charts.scss';
 import ReactDOM from 'react-dom';
+import {Provider} from "react-redux";
+
+import './styles/charts.scss';
+
 import Layout from './components/dashboard/layout.jsx';
-ReactDOM.render(<Layout />, document.getElementById('root'));
+import store from "./store/charts-store"
+
+ReactDOM.render(<Provider store={store}> 
+	<Layout /> 
+	</Provider> , document.getElementById('root'));

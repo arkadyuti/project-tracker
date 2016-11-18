@@ -23,7 +23,6 @@ module.exports = {
     }),
   ],
   module: {
-  
     loaders: [
     {
           test: /\.jsx?$/,
@@ -31,16 +30,19 @@ module.exports = {
             loader: 'babel',
         
             query: {
-               presets: ['es2015', 'react']
+               presets: ['es2015', "stage-0", 'react'],
+                plugins: ["transform-decorators-legacy"]
             }
         },
       {
-        test: /\.js?/,
-        exclude: [/node_modules/, /styles/],
-        loaders: ['babel'],
-        include: path.join(__dirname, 'src'),
-        
-      },
+      test:/\.js$/,
+      exclude:/node_modules/,
+      loader:'babel-loader',
+      query:{
+          presets: ["es2015", "stage-0", "react"],
+                plugins: ["transform-decorators-legacy"]
+      }
+        },
       {
         test: /\.(jpg|png)$/,
         loader: 'url-loader?limit=200000' 

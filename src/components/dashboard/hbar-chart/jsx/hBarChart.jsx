@@ -1,6 +1,19 @@
 import axios from 'axios';
 import React from 'react';
+import {connect} from "react-redux";
+
+import {fetchTrendsChartData} from "../../../../actions/charts/trends-chart"
+									
+
 import hBarChartCallBack from "../js/hBarChartD3.js";
+
+@connect((store) => {
+	return{
+		chartdata: store
+	};
+})
+
+
 class HBarChart extends React.Component {
 	constructor(props) {
 		super(props);

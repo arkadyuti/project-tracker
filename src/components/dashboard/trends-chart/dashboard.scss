@@ -6,7 +6,8 @@
     padding-left: 0px;
 	}
 	.growth-chart {
-	    
+	    padding-left: 15px;
+	    padding-right: 15px;
 	}
 	.status-chart {
 	    padding-bottom: 15px;
@@ -18,7 +19,7 @@
 	.chart-wrapper {
 	    background-color: #fefefe;
 	    width: 100%;
-	    min-height: 300px;
+	    min-height: 330px;
 	    padding: 15px;
 	}
 }
@@ -35,11 +36,6 @@
 .clear-both{
 	clear: both;
 }
-.trends-year{
-	text-align: center;
-	cursor: pointer;
-}
-
 .tooltip{
 		background-color: #383838;
 		color: #fafafa;
@@ -87,11 +83,4 @@
 		margin-right: 2px;
 	}
 }
-@media(max-width:768px){
-	.charts-container{
-		.skill-based-chart{
-			padding-left: 15px;
-		}
-	}
-	
-}
+
